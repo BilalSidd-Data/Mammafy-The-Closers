@@ -84,10 +84,10 @@ struct AppointmentCard: View {
         }
         
         let totalSeconds = Int(appointment.date.timeIntervalSince(now))
-        let h = totalSeconds / 3600
-        let m = (totalSeconds % 3600) / 60
-        let s = totalSeconds % 60
+        let days = totalSeconds / 86400
+        let hours = (totalSeconds % 86400) / 3600
+        let minutes = (totalSeconds % 3600) / 60
         
-        timeRemaining = String(format: "%02d:%02d:%02d", h, m, s)
+        timeRemaining = String(format: "%dd %02dh %02dm", days, hours, minutes)
     }
 }
